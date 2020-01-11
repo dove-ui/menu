@@ -100,6 +100,8 @@ export default {
     const isClicked = this.isClicked
     const isHovered = this.isHovered
 
+    if(menu.hide) return null
+
     if (menu.type === 'line') {
       return (
         <li class="vc-menu-line">
