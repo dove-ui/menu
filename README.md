@@ -71,5 +71,5 @@ import '@dove-ui/vc-menu/dist/index.css'
 | string          | menus[].target   | link tergat                |
 | string          | menus[].title    | title                      |
 | string          | menus[].type     | `line` Divider line        |
-
+| string          | menus[].hide     | hidden item                |
 
