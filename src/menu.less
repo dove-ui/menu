@@ -1,0 +1,111 @@
+@menu-name: vc-menu;
+@menu-item-height: 35px;
+
+.@{menu-name} {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &.is-root {
+    position: relative;
+  }
+
+  &-item {
+    line-height: @menu-item-height;
+    min-height: @menu-item-height;
+    font-size: 14px;
+
+    .@{menu-name} {
+      .@{menu-name}-item {
+        margin-left: 24px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .@{menu-name}-item--row {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      min-height: @menu-item-height;
+      transition: background-color 0.15s ease 0s, box-shadow 0.15s ease 0s;
+      // background-color: #fff;
+    }
+
+    .@{menu-name}-item--row.is-hovered {
+      background-color: rgba(201, 210, 220, 0.3);
+    }
+    .@{menu-name}-item--row.is-clicked {
+      background-color: rgba(113, 188, 255, 0.2);
+    }
+  }
+
+  &-item--label {
+    position: relative;
+    padding: 0 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-group {
+    margin-bottom: 10px;
+
+    &--label {
+      line-height: 25px;
+      padding: 0 10px;
+      opacity: .5;
+      font-size: 12px;
+      color: #8590A6;
+      // color: inherit;
+      user-select: none;
+    }
+  }
+
+  &--dropdown {
+    width: 15px;
+    color: inherit;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -7px;
+    -webkit-transition: -webkit-transform .2s linear;
+    transition: -webkit-transform .2s linear;
+    transition: transform .2s linear;
+    transition: transform .2s linear,-webkit-transform .2s linear;
+    line-height: 0;
+  }
+
+  &-line {
+    padding: 10px;
+
+    &--row {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(175, 194, 202, 0.26);
+    }
+  }
+
+  &--dark {
+    background-color: #19202E;
+    color: #8C96A9;
+
+    .@{menu-name}-item--row.is-hovered + .@{menu-name}-item--label,
+    .@{menu-name}-item--row.is-clicked + .@{menu-name}-item--label {
+      color: #fff;
+    }
+  }
+
+  &--light {
+    background-color: #fff;
+    color: #252b38;
+  }
+}

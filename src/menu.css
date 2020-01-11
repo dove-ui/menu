@@ -1,0 +1,89 @@
+.vc-menu {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.vc-menu.is-root {
+  position: relative;
+}
+.vc-menu-item {
+  line-height: 35px;
+  min-height: 35px;
+  font-size: 14px;
+}
+.vc-menu-item .vc-menu .vc-menu-item {
+  margin-left: 24px;
+}
+.vc-menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+.vc-menu-item .vc-menu-item--row {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  min-height: 35px;
+  transition: background-color 0.15s ease 0s, box-shadow 0.15s ease 0s;
+}
+.vc-menu-item .vc-menu-item--row.is-hovered {
+  background-color: rgba(201, 210, 220, 0.3);
+}
+.vc-menu-item .vc-menu-item--row.is-clicked {
+  background-color: rgba(113, 188, 255, 0.2);
+}
+.vc-menu-item--label {
+  position: relative;
+  padding: 0 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vc-menu-group {
+  margin-bottom: 10px;
+}
+.vc-menu-group--label {
+  line-height: 25px;
+  padding: 0 10px;
+  opacity: 0.5;
+  font-size: 12px;
+  color: #8590A6;
+  user-select: none;
+}
+.vc-menu--dropdown {
+  width: 15px;
+  color: inherit;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -7px;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+  line-height: 0;
+}
+.vc-menu-line {
+  padding: 10px;
+}
+.vc-menu-line--row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(175, 194, 202, 0.26);
+}
+.vc-menu--dark {
+  background-color: #19202E;
+  color: #8C96A9;
+}
+.vc-menu--dark .vc-menu-item--row.is-hovered + .vc-menu-item--label,
+.vc-menu--dark .vc-menu-item--row.is-clicked + .vc-menu-item--label {
+  color: #fff;
+}
+.vc-menu--light {
+  background-color: #fff;
+  color: #252b38;
+}
