@@ -153,7 +153,11 @@ export default {
       <li class={[this.menu.group ? 'vc-menu-group' : 'vc-menu-item']}>
         {menu.group ? groupLabel : menuItem}
 
-        {((this.isFolder && this.isOpen) || menu.group) ? (<vc-menu menus={menu.children} is-root={false} />) : null}
+        {
+        this.isFolder
+          ? (<vc-menu menus={menu.children} is-root={false} style={{display: (this.isOpen || menu.group) ? '' : 'none'}}/>)
+          : null
+        }
       </li>
     )
   }
