@@ -86,6 +86,10 @@ export default {
     }
   },
 
+  beforeCreate () {
+    this.$options.components.VcMenu = require('./menu').default
+  },
+
   created () {
     this.isOpen = !!this.menu.open
   },
