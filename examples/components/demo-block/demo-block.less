@@ -1,0 +1,23 @@
+.m-demo-block {
+  border: solid 1px #d7e2ea;
+  border-radius: 3px;
+  margin-bottom: 15px;
+
+  .demo {
+    padding: 15px;
+
+    &::before,
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  .code {
+    border-top: solid 1px #d7e2ea;
+
+    pre {
+      margin-bottom: 0;
+    }
+  }
+}
