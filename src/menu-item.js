@@ -132,7 +132,7 @@ export default {
   mounted () {
     if (this.isFolder && !this.menu.group) {
       // this.toggle()
-      this.$refs.submenu.$el.style.display = 'none'
+      if (!this.isOpen) this.$refs.submenu.$el.style.display = 'none'
     }
   },
 
