@@ -51,7 +51,7 @@ const menus = [
   {
     label: 'Submenu',
     name: 'item5',
-    open: true,
+    // open: true,
     // hide: true,
     children: [
       { label: 'Sub 1' },
@@ -62,7 +62,7 @@ const menus = [
         label: 'Sub1',
         children: [
           { label: 'Sub2' },
-          { label: 'Sub2' },
+          { label: 'Sub2', name: 'test' },
           { label: 'Sub2' },
           {
             label: 'children',
