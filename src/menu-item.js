@@ -51,6 +51,9 @@ export default {
   watch: {
     'menu.open' () {
       this.isOpen = !!this.menu.open
+    },
+    isOpen () {
+      this.toggle()
     }
   },
 
@@ -83,6 +86,38 @@ export default {
           this.root.$emit('close', this.menu)
         }
       }
+    },
+    toggle () {
+      const submenu = this.$refs.submenu ? this.$refs.submenu.$el : null
+      if (!submenu) return false
+
+      submenu.removeEventListener('transitionend', this.ontransitionend, false)
+      submenu.addEventListener('transitionend', this.ontransitionend, false)
+      
+      if (this.isOpen) {
+        submenu.style.display = null
+        submenu.style.height = 'auto'
+        const height = getComputedStyle(submenu).height
+        submenu.style.height = 0
+        submenu.offsetHeight // trigger reflow
+        submenu.style.height = height
+      } else {
+        const height = getComputedStyle(submenu).height
+        submenu.style.height = height
+        submenu.offsetHeight
+        submenu.style.height = 0
+      }
+    },
+    ontransitionend () {
+      // console.log(this.isOpen)
+      const submenu = this.$refs.submenu.$el
+      if (!submenu) return false
+      
+      submenu.style.height = null
+
+      if (!this.isOpen) {
+        submenu.style.display = 'none'
+      }
     }
   },
 
@@ -92,6 +127,13 @@ export default {
 
   created () {
     this.isOpen = !!this.menu.open
+  },
+
+  mounted () {
+    if (this.isFolder && !this.menu.group) {
+      // this.toggle()
+      this.$refs.submenu.$el.style.display = 'none'
+    }
   },
 
   // eslint-disable-next-line no-unused-vars
@@ -152,12 +194,24 @@ export default {
     )
 
     return (
-      <li class={[this.menu.group ? 'vc-menu-group' : 'vc-menu-item']}>
+      <li class={[
+        this.menu.group ? 'vc-menu-group' : 'vc-menu-item',
+        {
+          'is-open': this.isOpen
+        }
+        ]}>
         {menu.group ? groupLabel : menuItem}
 
         {
         this.isFolder
-          ? (<vc-menu menus={menu.children} is-root={false} style={{display: (this.isOpen || menu.group) ? '' : 'none'}}/>)
+          ? (<vc-menu
+              ref="submenu"
+              menus={menu.children}
+              is-root={false}
+              style={{
+                // display: (this.isOpen || menu.group) ? '' : 'none'
+              }}
+              />)
           : null
         }
       </li>
