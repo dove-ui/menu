@@ -68,7 +68,7 @@ const menus = [
             label: 'children',
             children: [
               { label: 'children' },
-              { label: 'children' },
+              { label: 'children', name: 'child' },
               { type: 'line' },
               { label: 'children' }
             ]
