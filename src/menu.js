@@ -7,18 +7,19 @@ export default {
     MenuItem
   },
   props: {
-   /**
+    /**
      * @param {string|function} menus[].label - 菜单项标题，函数类型优先级比renderItem和作用域插槽item高
      * @param {string} menus[].name - 菜单项唯一标识
      * @param {menu[]} menus[].children - 菜单项唯一标识
      * @param {boolean} menus[].open - 子菜单是否打开
      * @param {boolean} menus[].group - 分组
      * @param {string} menus[].type - line 分隔线
-     * @param {string} menus[].link // 链接
-     * @param {string} menus[].target // 链接target
-     * @param {string} menus[].title // title提示
-     * @param {string|Router} menus[].router // 路由
-     * @param {function} menus[].handle // 路由
+     * @param {string} menus[].link - 链接
+     * @param {string} menus[].target - 链接target
+     * @param {string} menus[].title - title提示
+     * @param {string|Router} menus[].router - 路由
+     * @param {function} menus[].handle - 路由
+     * @param {function} menus[].hide - 隐藏
      * **/
     menus: {
       type: Array,
