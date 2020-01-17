@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="clearfix" style="display: flex;">
     <!-- <div class="demo-white">
       <h4>Default</h4>
       <vc-menu :menus="menus" :current-active="['item4']"></vc-menu>
@@ -114,8 +114,7 @@ export default {
 <style lang="less">
   .demo-white,
   .demo-black {
-    width: 45%;
-    float: left;
+    width: 50%;
     padding: 15px;
     box-sizing: border-box;
     margin: 5px;

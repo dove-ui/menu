@@ -6,12 +6,6 @@
 .m-demo-block .demo {
   padding: 15px;
 }
-.m-demo-block .demo::before,
-.m-demo-block .demo::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 .m-demo-block .code {
   border-top: solid 1px #d7e2ea;
 }

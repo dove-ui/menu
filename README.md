@@ -1,10 +1,12 @@
-# Button
+# Menu
 
 A menu component for vue.
 
 ```js
-import VcMenu from '@dove-ui/vc-menu'
-import '@dove-ui/vc-menu/dist/index.css'
+import VcMenu from '@dove-ui/menu'
+import '@dove-ui/menu/dist/index.css'
+
+Vue.use(VcMenu) // VcMenu
 ```
 
 ```html
