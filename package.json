@@ -20,6 +20,8 @@
     "types",
     "screenshot.png"
   ],
+  "github": "https://github.com/mengdu/dove-ui/menu",
+  "website": "https://lanyueos.com",
   "homepage": "https://mengdu.github.io/dove-ui/menu",
   "repository": {
     "type": "https",
