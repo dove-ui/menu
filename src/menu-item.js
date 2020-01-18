@@ -15,6 +15,7 @@ function renderItemLabel (ctx, menu) {
 
 export default {
   name: 'VcMenuItem',
+  componentName: 'VcMenuItem',
   props: {
     menu: Object
   },
@@ -118,6 +119,25 @@ export default {
       if (!this.isOpen) {
         submenu.style.display = 'none'
       }
+    },
+
+    openParent () {
+      let parent = this.$parent
+      let count = 0
+
+      // 展开当前路径
+      while(parent) {
+        if (parent.$options.componentName === 'VcMenuItem') {
+          parent.isOpen = true
+          count = 0
+        } else {
+          count++
+        }
+
+        if (count > 2) break
+
+        parent = parent.$parent
+      }
     }
   },
 
@@ -133,6 +153,11 @@ export default {
     if (this.isFolder && !this.menu.group) {
       // this.toggle()
       if (!this.isOpen) this.$refs.submenu.$el.style.display = 'none'
+    }
+
+    // 渲染完毕展开激活项
+    if (this.isClicked && this.root.openActive) {
+      this.openParent()
     }
   },
 

@@ -39,7 +39,9 @@ export default {
     isRoot: {
       type: Boolean,
       default: true
-    }
+    },
+    // 是否自动展开当前选中项
+    openActive: Boolean
   },
 
   data () {
