@@ -22,8 +22,9 @@ Vue.use(VcMenu) // VcMenu
 | menus          | Menus object       | [MenuItem[]](#MenuItem) | —               | —       |
 | theme          | Menu theme         | string                  | `dark`/`light`  | —       |
 | current-active | Selected items     | any[]                   | —               | []      |
-| multiple       | Multiple selection | boolean                 | —               | false   |
+| multiple       | Multiple selection | boolean                 | true/false      | false   |
 | render-item    | Custom item render | function                | —               | —       |
+| open-active    | Auto open selected | function                | true/false      | —       |
 
 ### Menu Events
 

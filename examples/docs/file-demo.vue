@@ -23,7 +23,7 @@
 
     <div class="demo-black" style="background: #19202e;color:#fff">
       <h4>Light</h4>
-      <vc-menu :menus="menus" :current-active="['item4']" theme="light">
+      <vc-menu :menus="menus" :current-active="['item6']" theme="light" open-active>
         <template v-slot:item="menu">
           <img :src="logo" alt="" style="vertical-align:middle;width:12px;margin-right:5px;">
           <span>{{menu.label}}</span>
