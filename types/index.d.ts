@@ -22,6 +22,7 @@ export declare class Menu {
   currentActive: any[]
   multiple: Boolean
   renderItem: (menu: MenuItem) => Vue.VNode
+  openActive: Boolean
 }
 
 export default Menu
