@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="clearfix" style="display: flex;">
     <!-- <div class="demo-white">
       <h4>Default</h4>
       <vc-menu :menus="menus" :current-active="['item4']"></vc-menu>
@@ -23,7 +23,7 @@
 
     <div class="demo-black" style="background: #19202e;color:#fff">
       <h4>Light</h4>
-      <vc-menu :menus="menus" :current-active="['item4']" theme="light">
+      <vc-menu :menus="menus" :current-active="['item6']" theme="light" open-active>
         <template v-slot:item="menu">
           <img :src="logo" alt="" style="vertical-align:middle;width:12px;margin-right:5px;">
           <span>{{menu.label}}</span>
@@ -115,8 +115,7 @@ export default {
 <style lang="less">
   .demo-white,
   .demo-black {
-    width: 45%;
-    float: left;
+    width: 50%;
     padding: 15px;
     box-sizing: border-box;
     margin: 5px;

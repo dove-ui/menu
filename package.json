@@ -7,11 +7,9 @@
   "libraryName": "VcMenu",
   "scripts": {
     "dev": "vue-cli-service serve",
-    "docs": "npm run build:docs && npm run version-push",
     "build:docs": "vue-cli-service build",
     "build:lib": "vue-cli-service lint && vue-cli-service build --dest dist --target lib --name index src/index.js",
     "lint": "vue-cli-service lint",
-    "version-push": "node version-push.js && git add version.md && git commit -m \"chore(version): New version\" -uno && ls",
     "open": "dev serve -o docs"
   },
   "files": [
@@ -20,6 +18,8 @@
     "types",
     "screenshot.png"
   ],
+  "github": "https://github.com/mengdu/dove-ui/menu",
+  "website": "https://lanyueos.com",
   "homepage": "https://mengdu.github.io/dove-ui/menu",
   "repository": {
     "type": "https",

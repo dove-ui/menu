@@ -1,10 +1,12 @@
-# Button
+# Menu
 
 A menu component for vue.
 
 ```js
-import VcMenu from '@dove-ui/vc-menu'
-import '@dove-ui/vc-menu/dist/index.css'
+import VcMenu from '@dove-ui/menu'
+import '@dove-ui/menu/dist/index.css'
+
+Vue.use(VcMenu) // VcMenu
 ```
 
 ```html
@@ -20,8 +22,9 @@ import '@dove-ui/vc-menu/dist/index.css'
 | menus          | Menus object       | [MenuItem[]](#MenuItem) | —               | —       |
 | theme          | Menu theme         | string                  | `dark`/`light`  | —       |
 | current-active | Selected items     | any[]                   | —               | []      |
-| multiple       | Multiple selection | boolean                 | —               | false   |
+| multiple       | Multiple selection | boolean                 | true/false      | false   |
 | render-item    | Custom item render | function                | —               | —       |
+| open-active    | Auto open selected | function                | true/false      | —       |
 
 ### Menu Events
 
