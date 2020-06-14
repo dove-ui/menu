@@ -45,6 +45,21 @@ export default {
     },
     isFolder () {
       return isArr(this.menu.children)
+    },
+    showRow () {
+      let parent = this.$parent
+
+      while (parent) {
+        if (parent.$options.componentName !== 'VcMenu' && parent.isRoot) {
+          return true
+        }
+
+        if (parent.isOpen === false) return false
+
+        parent = parent.$parent
+      }
+
+      return true
     }
   },
 
@@ -153,7 +168,7 @@ export default {
     }
 
     const menuRow = (
-      <div class={['vc-menu-item--row', isClicked && 'is-clicked', isHovered && 'is-hovered']}
+      <div class={['vc-menu-item--row', (isClicked && this.showRow) && 'is-clicked', isHovered && 'is-hovered']}
         on-mouseover={() => this.isHovered = true}
         on-mouseout={() => this.isHovered = false}
         on-click={this.handleClick}
