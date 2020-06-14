@@ -6,7 +6,7 @@
     </div> -->
     <div class="demo-black">
       <h4>Dark</h4>
-      <vc-menu :menus="menus" :current-active="['item4']" theme="dark">
+      <vc-menu :menus="menus" :current-active="['test', 'child']" theme="dark">
         <!-- before vue 2.6.0
         <template slot-scope="menu" slot="item">
           <img :src="logo" alt="" style="vertical-align:middle;width:12px;margin-right:5px;">
@@ -50,7 +50,7 @@ const menus = [
   },
   {
     label: 'Submenu',
-    name: 'item5',
+    // name: 'item5',
     // open: true,
     // hide: true,
     children: [
